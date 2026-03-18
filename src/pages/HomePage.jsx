@@ -78,10 +78,10 @@ function HomePage() {
               {heroStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="glass-panel rounded-[24px] p-4"
+                  className="rounded-[24px] border border-white/20 bg-white/15 p-4 text-white shadow-soft backdrop-blur-xl"
                 >
                   <p className="text-2xl font-semibold text-white">{stat.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">{stat.label}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/80">{stat.label}</p>
                 </div>
               ))}
             </div>
