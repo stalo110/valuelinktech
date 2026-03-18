@@ -10,11 +10,11 @@ function ContactStrip() {
   ];
 
   return (
-    <section className="border-t border-slate-200/70 bg-white/80">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm text-slate-600 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <section className="border-t border-slate-200/70 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.03]">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm text-slate-600 dark:text-slate-300 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         {details.map(({ icon: Icon, text }) => (
           <div key={text} className="flex items-start gap-3">
-            <span className="mt-0.5 rounded-full bg-teal/10 p-2 text-teal">
+            <span className="mt-0.5 rounded-full bg-teal/10 p-2 text-teal shadow-[0_0_0_1px_rgba(0,188,212,0.12)]">
               <Icon className="h-4 w-4" />
             </span>
             <span>{text}</span>

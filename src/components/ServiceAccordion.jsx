@@ -14,8 +14,10 @@ function ServiceAccordion({ categories }) {
         return (
           <div
             key={title}
-            className={`overflow-hidden rounded-[28px] border bg-white shadow-card transition ${
-              isOpen ? 'border-teal/60' : 'border-slate-200/80'
+            className={`overflow-hidden rounded-[28px] border shadow-card transition dark:bg-white/[0.04] dark:shadow-[0_18px_40px_-22px_rgba(0,0,0,0.75)] ${
+              isOpen
+                ? 'border-teal/60 bg-white dark:border-teal/40'
+                : 'border-slate-200/80 bg-white/85 dark:border-white/10'
             }`}
           >
             <button
@@ -24,16 +26,16 @@ function ServiceAccordion({ categories }) {
               onClick={() => setOpenIndex(isOpen ? -1 : index)}
             >
               <div className="flex items-start gap-4">
-                <span className="rounded-2xl bg-ink p-3 text-white">
+                <span className="rounded-2xl bg-ink p-3 text-white dark:bg-white dark:text-ink">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-                  <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600">{intro}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">{intro}</p>
                 </div>
               </div>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-slate-500 transition-transform ${
+                className={`h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-300 ${
                   isOpen ? 'rotate-180' : ''
                 }`}
               />
@@ -48,11 +50,11 @@ function ServiceAccordion({ categories }) {
                   transition={{ duration: 0.35, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="grid gap-4 border-t border-slate-200/80 px-6 py-6 sm:px-8 lg:grid-cols-2">
+                  <div className="grid gap-4 border-t border-slate-200/80 px-6 py-6 dark:border-white/10 sm:px-8 lg:grid-cols-2">
                     {items.map((item) => (
                       <div
                         key={item}
-                        className="rounded-3xl border border-slate-200/80 bg-slate-50/80 p-5 text-sm leading-7 text-slate-700"
+                        className="rounded-3xl border border-slate-200/80 bg-slate-50/80 p-5 text-sm leading-7 text-slate-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200"
                       >
                         {item}
                       </div>

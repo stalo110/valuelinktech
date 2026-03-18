@@ -12,6 +12,16 @@ import {
   Users,
 } from 'lucide-react';
 
+export const siteMetadata = {
+  name: 'Valuelink Technologies',
+  tagline: 'Support That Delivers',
+  siteUrl: 'https://www.valuelinktech.com',
+  description:
+    'Valuelink Technologies delivers end-to-end IT solutions covering infrastructure, software, cybersecurity, procurement, advisory, and managed support.',
+  defaultImage:
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+};
+
 export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },

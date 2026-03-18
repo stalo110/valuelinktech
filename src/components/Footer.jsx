@@ -11,7 +11,7 @@ const socialIcons = {
 
 function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="border-t border-slate-200/60 bg-[linear-gradient(180deg,#071321_0%,#0a1929_100%)] text-white dark:border-white/10">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
         <div className="space-y-5">
           <Link to="/" className="inline-flex items-center gap-3">

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Valuelink Technologies delivers end-to-end IT solutions that empower businesses through innovation, trust, and technical expertise."
+    />
+    <meta name="theme-color" content="#f8fbfd" />
+    <script>
+      (() => {
+        const storedTheme = localStorage.getItem('valuelink-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <title>Valuelink Technologies | Support That Delivers</title>
+    <script type="module" crossorigin src="/assets/index-D-mWP8PB.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CkkM8EBU.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

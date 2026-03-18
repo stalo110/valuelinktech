@@ -5,12 +5,31 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   color: #0f172a;
   background-color: #f8fafc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --page-bg:
+    radial-gradient(circle at top left, rgba(0, 188, 212, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 183, 77, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+  --page-text: #0f172a;
+  --surface-border: rgba(148, 163, 184, 0.28);
+  --surface-bg: rgba(255, 255, 255, 0.74);
+}
+
+html.dark {
+  color-scheme: dark;
+  --page-bg:
+    radial-gradient(circle at top left, rgba(0, 188, 212, 0.12), transparent 20%),
+    radial-gradient(circle at top right, rgba(255, 183, 77, 0.08), transparent 18%),
+    linear-gradient(180deg, #06111d 0%, #081525 100%);
+  --page-text: #e2e8f0;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-bg: rgba(255, 255, 255, 0.05);
 }
 
 html {
@@ -21,10 +40,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(0, 188, 212, 0.12), transparent 28%),
-    linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
-  color: #0f172a;
+  background: var(--page-bg);
+  color: var(--page-text);
+  transition:
+    background 260ms ease,
+    color 260ms ease;
 }
 
 a {
@@ -45,7 +65,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #dbe4ee;
+  background: rgba(148, 163, 184, 0.16);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -61,4 +81,30 @@ a {
 
 .text-balance {
   text-wrap: balance;
+}
+
+@layer components {
+  .surface-panel {
+    @apply rounded-[30px] border border-slate-200/70 bg-white/80 shadow-card backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_18px_40px_-22px_rgba(0,0,0,0.8)];
+  }
+
+  .glass-panel {
+    @apply border border-white/40 bg-white/65 shadow-soft backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_24px_80px_-24px_rgba(0,0,0,0.82)];
+  }
+
+  .section-shell {
+    @apply surface-panel p-8 sm:p-10 lg:p-12;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-steel dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200;
+  }
+
+  .accent-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#ffc980];
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/60 px-6 py-3 text-sm font-medium text-slate-800 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-teal/50 hover:text-steel dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-100 dark:hover:border-teal/50 dark:hover:text-white;
+  }
 }
