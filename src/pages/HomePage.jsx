@@ -38,9 +38,9 @@ function HomePage() {
       />
 
       <section className="px-4 pb-10 pt-6 sm:pb-14">
-        <div className="mx-auto grid max-w-7xl gap-8 overflow-hidden rounded-[40px] border border-slate-200/60 bg-[linear-gradient(135deg,#071321_0%,#0d2439_30%,#1e3a5f_66%,#245f79_100%)] px-6 py-12 text-white shadow-soft sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-14 lg:py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 overflow-hidden rounded-[40px] border border-[color:var(--surface-border)] bg-[linear-gradient(135deg,#120d0c_0%,#281714_30%,#4a2923_66%,#8d2418_100%)] px-6 py-12 text-white shadow-soft sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-14 lg:py-16">
           <div className="relative z-10 max-w-2xl">
-            <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-slate-200">
+            <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-stone-200">
               Support That Delivers
             </span>
             <motion.h1
@@ -55,7 +55,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 max-w-xl text-base leading-8 text-slate-200 sm:text-lg"
+              className="mt-6 max-w-xl text-base leading-8 text-stone-200 sm:text-lg"
             >
               Your trusted technology partner for infrastructure, software, advisory, procurement, and long-term support.
             </motion.p>
@@ -88,8 +88,8 @@ function HomePage() {
           </div>
 
           <div className="relative">
-            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-teal/20 blur-3xl" />
-            <div className="absolute bottom-8 right-0 h-44 w-44 rounded-full bg-gold/20 blur-3xl" />
+            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-ember/20 blur-3xl" />
+            <div className="absolute bottom-8 right-0 h-44 w-44 rounded-full bg-cream/15 blur-3xl" />
             <div className="grid-overlay absolute inset-0 opacity-30" />
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
               <SmartImage
@@ -99,12 +99,12 @@ function HomePage() {
                 containerClassName="h-[420px] w-full rounded-[26px]"
                 className="h-[420px] w-full rounded-[26px] object-cover"
               />
-              <div className="absolute inset-x-10 bottom-10 rounded-[28px] border border-white/10 bg-ink/70 p-6 backdrop-blur-md">
-                <div className="flex items-center gap-3 text-gold">
+              <div className="absolute inset-x-10 bottom-10 rounded-[28px] border border-white/10 bg-ink/75 p-6 backdrop-blur-md">
+                <div className="flex items-center gap-3 text-sand">
                   <BadgeCheck className="h-5 w-5" />
                   <span className="text-sm font-medium uppercase tracking-[0.22em]">Trusted Technology Delivery</span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-slate-200">
+                <p className="mt-3 text-sm leading-7 text-stone-200">
                   From assessment and design to licensing and long-term support, Valuelink Technologies stays with your business through the full delivery cycle.
                 </p>
               </div>
@@ -116,7 +116,7 @@ function HomePage() {
       <AnimatedSection className="px-4 py-8 sm:py-12">
         <div className="section-shell mx-auto max-w-7xl">
           <SectionHeading eyebrow="Our Vision" title="Technology partnership built for measurable transformation" />
-          <p className="mt-6 max-w-5xl text-base leading-8 text-slate-600 dark:text-slate-300">{companyCopy.vision}</p>
+          <p className="mt-6 max-w-5xl text-base leading-8 text-[color:var(--muted-text)]">{companyCopy.vision}</p>
         </div>
       </AnimatedSection>
 
@@ -124,12 +124,12 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
           <div className="section-shell">
             <SectionHeading eyebrow="Our Mission" title="Connecting businesses with the right technology" />
-            <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300">{companyCopy.mission}</p>
+            <p className="mt-6 text-base leading-8 text-[color:var(--muted-text)]">{companyCopy.mission}</p>
           </div>
 
-          <div className="section-shell bg-[linear-gradient(145deg,rgba(0,188,212,0.08),rgba(255,183,77,0.18))] dark:bg-[linear-gradient(145deg,rgba(0,188,212,0.12),rgba(255,183,77,0.08))]">
+          <div className="section-shell bg-[linear-gradient(145deg,rgba(141,36,24,0.08),rgba(215,194,176,0.28))] dark:bg-[linear-gradient(145deg,rgba(141,36,24,0.18),rgba(215,194,176,0.08))]">
             <SectionHeading eyebrow="Our Promise" title="Partnerships grounded in trust, performance, and results" />
-            <p className="mt-6 text-base leading-8 text-slate-700 dark:text-slate-200">{companyCopy.promise}</p>
+            <p className="mt-6 text-base leading-8 text-stone-700 dark:text-stone-200">{companyCopy.promise}</p>
           </div>
         </div>
       </AnimatedSection>

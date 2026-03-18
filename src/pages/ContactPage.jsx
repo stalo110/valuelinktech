@@ -85,13 +85,13 @@ function ContactPage() {
 
             <div className="space-y-4">
               {details.map(({ label, value, icon: Icon }) => (
-                <div key={label} className="flex gap-4 rounded-3xl bg-slate-50 p-5 dark:bg-white/[0.04]">
-                  <span className="rounded-2xl bg-ink p-3 text-white dark:bg-white dark:text-ink">
+                <div key={label} className="flex gap-4 rounded-3xl bg-[#fbf3eb] p-5 dark:bg-white/[0.04]">
+                  <span className="rounded-2xl bg-ink p-3 text-cream dark:bg-cream dark:text-ink">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">{label}</p>
-                    <p className="mt-1 text-sm leading-7 text-slate-600 dark:text-slate-300">{value}</p>
+                    <p className="text-sm font-semibold text-stone-950 dark:text-cream">{label}</p>
+                    <p className="mt-1 text-sm leading-7 text-[color:var(--muted-text)]">{value}</p>
                   </div>
                 </div>
               ))}
@@ -111,7 +111,7 @@ function ContactPage() {
           <AnimatedSection
             as="div"
             amount={0.15}
-            className="rounded-[32px] border border-slate-200/80 bg-[linear-gradient(160deg,rgba(10,25,41,1)_0%,rgba(30,58,95,1)_65%,rgba(0,188,212,0.88)_100%)] p-8 text-white shadow-soft sm:p-10"
+            className="rounded-[32px] border border-[color:var(--surface-border)] bg-[linear-gradient(160deg,rgba(16,11,10,1)_0%,rgba(52,32,27,1)_62%,rgba(141,36,24,0.96)_100%)] p-8 text-white shadow-soft sm:p-10"
           >
             <SectionHeading
               eyebrow="Get in Touch"
@@ -122,40 +122,40 @@ function ContactPage() {
 
             <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-slate-200">Name</span>
+                <span className="mb-2 block text-sm font-medium text-stone-200">Name</span>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-slate-300 focus:border-gold focus:bg-white/15"
+                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
                   placeholder="Your name"
                 />
               </label>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-slate-200">Email</span>
+                <span className="mb-2 block text-sm font-medium text-stone-200">Email</span>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-slate-300 focus:border-gold focus:bg-white/15"
+                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
                   placeholder="you@company.com"
                 />
               </label>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-slate-200">Message</span>
+                <span className="mb-2 block text-sm font-medium text-stone-200">Message</span>
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-slate-300 focus:border-gold focus:bg-white/15"
+                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
                   placeholder="Tell us what you need support with."
                 />
               </label>
@@ -168,7 +168,7 @@ function ContactPage() {
               </button>
 
               {submitted ? (
-                <p aria-live="polite" className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-slate-100">
+                <p aria-live="polite" className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-stone-100">
                   Message recorded. This demo form is ready to connect to your preferred backend or email workflow.
                 </p>
               ) : null}

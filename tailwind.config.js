@@ -8,18 +8,18 @@ export default {
         sans: ['Poppins', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
-        ink: '#0a1929',
-        steel: '#1e3a5f',
-        mist: '#e2e8f0',
-        teal: '#00bcd4',
-        gold: '#ffb74d',
-        night: '#06111d',
-        slateglass: '#0f172acc',
+        ink: '#15100f',
+        oak: '#3a211d',
+        ember: '#8d2418',
+        cream: '#f3ece4',
+        sand: '#d7c2b0',
+        night: '#100b0a',
+        slateglass: '#15100fcc',
       },
       boxShadow: {
-        soft: '0 24px 80px -24px rgba(10, 25, 41, 0.22)',
-        card: '0 18px 40px -22px rgba(15, 23, 42, 0.24)',
-        glow: '0 30px 90px -40px rgba(0, 188, 212, 0.65)',
+        soft: '0 24px 80px -24px rgba(53, 26, 22, 0.24)',
+        card: '0 18px 40px -22px rgba(26, 16, 15, 0.22)',
+        glow: '0 28px 90px -42px rgba(141, 36, 24, 0.42)',
       },
       backgroundImage: {
         'hero-grid':

@@ -11,9 +11,9 @@ function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       whileTap={{ scale: 0.95 }}
-      className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-3 py-2 text-sm font-medium text-slate-700 backdrop-blur-xl transition hover:border-teal/50 hover:text-steel dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-200 dark:hover:border-teal/50 dark:hover:text-white"
+      className="inline-flex items-center gap-2 rounded-full border border-[color:var(--surface-border)] bg-[color:var(--glass-bg)] px-3 py-2 text-sm font-medium text-stone-700 backdrop-blur-xl transition hover:border-ember/40 hover:text-ember dark:text-stone-200 dark:hover:border-sand/40 dark:hover:text-cream"
     >
-      <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
+      <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-ink text-cream dark:bg-cream dark:text-ink">
         <motion.span
           key={isDark ? 'moon' : 'sun'}
           initial={{ opacity: 0, rotate: -30, scale: 0.7 }}

@@ -6,30 +6,38 @@
 
 :root {
   color-scheme: light;
-  color: #0f172a;
-  background-color: #f8fafc;
+  color: #1f1816;
+  background-color: #fcf8f4;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --page-bg:
-    radial-gradient(circle at top left, rgba(0, 188, 212, 0.14), transparent 26%),
-    radial-gradient(circle at top right, rgba(255, 183, 77, 0.14), transparent 22%),
-    linear-gradient(180deg, #f1f5fa 0%, #e8eef5 100%);
-  --page-text: #0f172a;
-  --surface-border: rgba(100, 116, 139, 0.35);
-  --surface-bg: rgba(255, 255, 255, 0.9);
+    radial-gradient(circle at top left, rgba(141, 36, 24, 0.13), transparent 28%),
+    radial-gradient(circle at top right, rgba(215, 194, 176, 0.3), transparent 24%),
+    linear-gradient(180deg, #fcf8f4 0%, #f2e7dd 100%);
+  --page-text: #1f1816;
+  --muted-text: #6d564d;
+  --surface-border: rgba(74, 52, 45, 0.16);
+  --surface-border-strong: rgba(74, 52, 45, 0.24);
+  --surface-bg: rgba(255, 250, 245, 0.78);
+  --surface-bg-strong: rgba(255, 250, 245, 0.92);
+  --glass-bg: rgba(255, 250, 245, 0.72);
 }
 
 html.dark {
   color-scheme: dark;
   --page-bg:
-    radial-gradient(circle at top left, rgba(0, 188, 212, 0.12), transparent 20%),
-    radial-gradient(circle at top right, rgba(255, 183, 77, 0.08), transparent 18%),
-    linear-gradient(180deg, #06111d 0%, #081525 100%);
-  --page-text: #e2e8f0;
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --surface-bg: rgba(255, 255, 255, 0.05);
+    radial-gradient(circle at top left, rgba(141, 36, 24, 0.16), transparent 22%),
+    radial-gradient(circle at top right, rgba(215, 194, 176, 0.08), transparent 18%),
+    linear-gradient(180deg, #100b0a 0%, #181110 100%);
+  --page-text: #f3e9df;
+  --muted-text: #c8b3a3;
+  --surface-border: rgba(255, 239, 228, 0.1);
+  --surface-border-strong: rgba(255, 239, 228, 0.16);
+  --surface-bg: rgba(255, 250, 245, 0.04);
+  --surface-bg-strong: rgba(255, 250, 245, 0.07);
+  --glass-bg: rgba(255, 250, 245, 0.05);
 }
 
 html {
@@ -57,7 +65,7 @@ a {
 }
 
 ::selection {
-  background: rgba(0, 188, 212, 0.22);
+  background: rgba(141, 36, 24, 0.2);
 }
 
 ::-webkit-scrollbar {
@@ -65,11 +73,11 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(100, 116, 139, 0.18);
+  background: rgba(74, 52, 45, 0.12);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1e3a5f, #00bcd4);
+  background: linear-gradient(180deg, #3a211d, #8d2418);
   border-radius: 999px;
 }
 
@@ -85,11 +93,15 @@ a {
 
 @layer components {
   .surface-panel {
-    @apply rounded-[30px] border border-slate-300/70 bg-white/95 shadow-card backdrop-blur-sm transition-colors dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_18px_40px_-22px_rgba(0,0,0,0.8)];
+    @apply rounded-[30px] border shadow-card backdrop-blur-sm transition-colors;
+    border-color: var(--surface-border);
+    background: var(--surface-bg-strong);
   }
 
   .glass-panel {
-    @apply border border-white/60 bg-white/80 shadow-soft backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_24px_80px_-24px_rgba(0,0,0,0.82)];
+    @apply border shadow-soft backdrop-blur-xl transition-colors;
+    border-color: var(--surface-border);
+    background: var(--glass-bg);
   }
 
   .section-shell {
@@ -97,14 +109,16 @@ a {
   }
 
   .primary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-steel dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember px-6 py-3 text-sm font-medium text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-oak dark:bg-cream dark:text-ink dark:hover:bg-sand;
   }
 
   .accent-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#ffc980];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-sand;
   }
 
   .secondary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200/80 bg-white/60 px-6 py-3 text-sm font-medium text-slate-800 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-teal/50 hover:text-steel dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-100 dark:hover:border-teal/50 dark:hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-medium text-stone-800 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-ember/50 hover:text-ember dark:text-stone-100 dark:hover:border-cream/40 dark:hover:text-cream;
+    border-color: var(--surface-border);
+    background: var(--glass-bg);
   }
 }

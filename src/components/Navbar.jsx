@@ -26,15 +26,15 @@ function Navbar() {
   }, []);
 
   const navClassName = ({ isActive }) =>
-    `transition-colors ${isActive ? 'text-teal' : 'text-slate-700 hover:text-steel dark:text-slate-200 dark:hover:text-white'}`;
+    `transition-colors ${isActive ? 'text-ember' : 'text-stone-700 hover:text-oak dark:text-stone-200 dark:hover:text-cream'}`;
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <div
         className={`mx-auto max-w-7xl rounded-[28px] border px-5 transition-all lg:px-7 ${
           scrolled
-            ? 'border-slate-300/70 bg-white/90 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]'
-            : 'border-slate-300/60 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-white/[0.04]'
+            ? 'border-[color:var(--surface-border-strong)] bg-[color:var(--surface-bg-strong)] shadow-soft backdrop-blur-xl'
+            : 'border-[color:var(--surface-border)] bg-[color:var(--surface-bg)] backdrop-blur-md'
         }`}
       >
         <div className="flex h-20 items-center justify-between gap-6">
@@ -59,7 +59,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="rounded-full border border-slate-200 p-3 text-slate-700 dark:border-white/10 dark:text-slate-200 lg:hidden"
+            className="rounded-full border border-[color:var(--surface-border)] p-3 text-stone-700 dark:text-stone-200 lg:hidden"
             aria-expanded={open}
             aria-label="Toggle navigation menu"
             onClick={() => setOpen((current) => !current)}
@@ -69,7 +69,7 @@ function Navbar() {
         </div>
 
         {open && (
-          <div className="border-t border-slate-200/80 pb-5 dark:border-white/10 lg:hidden">
+          <div className="border-t border-[color:var(--surface-border)] pb-5 lg:hidden">
             <nav className="flex flex-col gap-4 pt-5 text-sm">
               {navLinks.map((link) => (
                 <NavLink
