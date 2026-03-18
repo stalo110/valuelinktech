@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { navLinks } from '../data/site';
+import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
@@ -32,19 +33,13 @@ function Navbar() {
       <div
         className={`mx-auto max-w-7xl rounded-[28px] border px-5 transition-all lg:px-7 ${
           scrolled
-            ? 'border-white/40 bg-white/80 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]'
-            : 'border-slate-200/60 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-white/[0.04]'
+            ? 'border-slate-300/70 bg-white/90 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]'
+            : 'border-slate-300/60 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-white/[0.04]'
         }`}
       >
         <div className="flex h-20 items-center justify-between gap-6">
           <NavLink to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="rounded-2xl bg-ink px-4 py-3 text-base font-semibold tracking-[0.18em] text-white shadow-card dark:bg-white dark:text-ink">
-              :::VT::::
-            </span>
-            <div className="hidden sm:block">
-              <p className="text-base font-semibold text-slate-900 dark:text-white">Valuelink Technologies</p>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Support That Delivers</p>
-            </div>
+            <Logo />
           </NavLink>
 
           <nav className="hidden items-center gap-8 lg:flex">

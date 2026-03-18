@@ -19,7 +19,7 @@ export const siteMetadata = {
   description:
     'Valuelink Technologies delivers end-to-end IT solutions covering infrastructure, software, cybersecurity, procurement, advisory, and managed support.',
   defaultImage:
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+    'https://images.pexels.com/photos/34221317/pexels-photo-34221317.png?cs=srgb&dl=pexels-luis-sevilla-252657-34221317.jpg&fm=jpg',
 };
 
 export const navLinks = [

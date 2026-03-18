@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { contactInfo, socialLinks } from '../data/site';
+import Logo from './Logo';
 
 const socialIcons = {
   LinkedIn: Linkedin,
@@ -15,13 +16,7 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
         <div className="space-y-5">
           <Link to="/" className="inline-flex items-center gap-3">
-            <span className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-lg font-semibold tracking-[0.22em] text-white">
-              :::VT::::
-            </span>
-            <div>
-              <p className="text-lg font-semibold">Valuelink Technologies</p>
-              <p className="text-sm text-slate-300">Support That Delivers</p>
-            </div>
+            <Logo showTagline inverted />
           </Link>
           <p className="max-w-md text-sm leading-7 text-slate-300">
             Modern IT infrastructure, software, support, and advisory services designed to help businesses scale with confidence.

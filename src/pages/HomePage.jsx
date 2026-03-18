@@ -93,8 +93,8 @@ function HomePage() {
             <div className="grid-overlay absolute inset-0 opacity-30" />
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/10 p-4 backdrop-blur-sm">
               <SmartImage
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern server room"
+                src="https://images.pexels.com/photos/34221317/pexels-photo-34221317.png?cs=srgb&dl=pexels-luis-sevilla-252657-34221317.jpg&fm=jpg"
+                alt="Modern team collaboration in a premium workspace"
                 priority
                 containerClassName="h-[420px] w-full rounded-[26px]"
                 className="h-[420px] w-full rounded-[26px] object-cover"
