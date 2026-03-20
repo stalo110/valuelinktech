@@ -45,9 +45,9 @@ export const socialLinks = [
 ];
 
 export const heroStats = [
-  { label: 'Business-First Delivery', value: 'End-to-End' },
-  { label: 'Service Window', value: 'Mon-Sat' },
-  { label: 'Support Promise', value: 'Results-Led' },
+  { label: 'Service pillars', value: '8' },
+  { label: 'Support window', value: 'Mon-Sat' },
+  { label: 'Operating base', value: 'Lagos' },
 ];
 
 export const serviceHighlights = [
@@ -198,5 +198,5 @@ export const companyCopy = {
   promise:
     'With "Support That Delivers" as our promise, we do not just supply technology - we build lasting partnerships grounded in trust, performance, and results. Whether you are upgrading your systems, expanding your capabilities, or seeking end-to-end IT transformation, Valuelink Technologies is your link to smarter, more impactful solutions.',
   additional:
-    'Constantly Striving for Creative Solutions to Business Needs. Typical ad agency clients include businesses and corporations, non-profit organizations and private agencies. Constantly Striving for Creative Solutions to Business Needs.',
+    'Valuelink Technologies brings creative thinking to practical execution, helping businesses connect infrastructure, software, procurement, and support without the handoff gaps that usually slow delivery down.',
 };

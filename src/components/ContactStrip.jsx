@@ -10,14 +10,14 @@ function ContactStrip() {
   ];
 
   return (
-    <section className="border-t border-[color:var(--surface-border)] bg-[color:var(--surface-bg)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 text-sm text-stone-700 dark:text-stone-300 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <section className="px-4 pb-8 pt-6 sm:pb-10">
+      <div className="mx-auto grid max-w-7xl gap-4 rounded-[34px] border border-[color:var(--surface-border)] bg-white px-6 py-6 shadow-card md:grid-cols-2 xl:grid-cols-4 xl:px-8">
         {details.map(({ icon: Icon, text }) => (
-          <div key={text} className="flex items-start gap-3">
-            <span className="mt-0.5 rounded-full bg-ember/10 p-2 text-ember shadow-[0_0_0_1px_rgba(141,36,24,0.12)] dark:bg-ember/15 dark:text-sand">
+          <div key={text} className="flex items-start gap-4 rounded-[24px] border border-[color:var(--surface-border)] bg-[#fffcf8] p-4">
+            <span className="mt-0.5 rounded-full bg-ember/10 p-3 text-ember shadow-[0_0_0_1px_rgba(141,36,24,0.08)]">
               <Icon className="h-4 w-4" />
             </span>
-            <span>{text}</span>
+            <span className="text-sm leading-7 text-stone-700">{text}</span>
           </div>
         ))}
       </div>

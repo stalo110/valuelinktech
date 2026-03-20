@@ -1,4 +1,4 @@
-import logoImage from '../assets/logo.jpeg';
+import logoImage from '../assets/logo.png';
 
 function Logo({ showTagline = true, compact = false, inverted = false }) {
   const imageHeightClass = compact ? 'h-10 sm:h-11' : 'h-11 sm:h-12';

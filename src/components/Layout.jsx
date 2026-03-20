@@ -6,7 +6,6 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import PageLoader from './PageLoader';
 import ScrollToTop from './ScrollToTop';
-import TopBar from './TopBar';
 
 function Layout() {
   const location = useLocation();
@@ -14,18 +13,19 @@ function Layout() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <ScrollToTop />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(215,194,176,0.24),transparent_18%),radial-gradient(circle_at_18%_12%,rgba(141,36,24,0.18),transparent_24%),radial-gradient(circle_at_80%_42%,rgba(58,33,29,0.12),transparent_24%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(215,194,176,0.08),transparent_14%),radial-gradient(circle_at_15%_10%,rgba(141,36,24,0.16),transparent_22%),radial-gradient(circle_at_80%_42%,rgba(58,33,29,0.22),transparent_26%)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[620px] bg-[linear-gradient(180deg,rgba(255,249,243,0.58),transparent)] dark:bg-[linear-gradient(180deg,rgba(16,11,10,0.74),transparent)]" />
-      <TopBar />
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(141,36,24,0.1),transparent_22%),radial-gradient(circle_at_top_right,rgba(215,194,176,0.32),transparent_24%),linear-gradient(180deg,#fffdf8_0%,#f7f1e8_100%)]" />
+        <div className="grid-overlay absolute inset-0 opacity-55" />
+      </div>
       <Navbar />
       <AnimatePresence mode="wait">
-        {/* Key the page container by pathname so route transitions run on every navigation. */}
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0, y: -18 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="relative"
         >
           <Suspense fallback={<PageLoader />}>
             <Outlet />

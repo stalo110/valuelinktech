@@ -72,6 +72,7 @@ function ContactPage() {
         title="Contact Us"
         description="Start a conversation about infrastructure, managed services, software, procurement, or long-term IT support."
         image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+        highlights={['Lagos office', 'Mon-Sat support window', 'Fast response to enquiries']}
       />
 
       <AnimatedSection className="px-4 pb-14 pt-8 sm:pt-12">
@@ -85,19 +86,19 @@ function ContactPage() {
 
             <div className="space-y-4">
               {details.map(({ label, value, icon: Icon }) => (
-                <div key={label} className="flex gap-4 rounded-3xl bg-[#fbf3eb] p-5 dark:bg-white/[0.04]">
-                  <span className="rounded-2xl bg-ink p-3 text-cream dark:bg-cream dark:text-ink">
+                <div key={label} className="flex gap-4 rounded-[26px] border border-[color:var(--surface-border)] bg-[#fffcf8] p-5">
+                  <span className="rounded-[18px] bg-ember/10 p-3 text-ember">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-stone-950 dark:text-cream">{label}</p>
+                    <p className="text-sm font-semibold text-stone-950">{label}</p>
                     <p className="mt-1 text-sm leading-7 text-[color:var(--muted-text)]">{value}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="overflow-hidden rounded-[28px] border border-slate-200/80 dark:border-white/10">
+            <div className="overflow-hidden rounded-[28px] border border-[color:var(--surface-border)]">
               <iframe
                 title="Valuelink Technologies location"
                 src="https://www.google.com/maps?q=21%20Bodethomas%2C%20Surulere%2C%20Lagos&output=embed"
@@ -111,64 +112,60 @@ function ContactPage() {
           <AnimatedSection
             as="div"
             amount={0.15}
-            className="rounded-[32px] border border-[color:var(--surface-border)] bg-[linear-gradient(160deg,rgba(16,11,10,1)_0%,rgba(52,32,27,1)_62%,rgba(141,36,24,0.96)_100%)] p-8 text-white shadow-soft sm:p-10"
+            className="rounded-[34px] border border-[color:var(--surface-border)] bg-white p-8 shadow-soft sm:p-10"
           >
             <SectionHeading
               eyebrow="Get in Touch"
               title="Send us a message"
               description="Share your goals, current challenges, or the support you need, and we'll follow up."
-              light
             />
 
             <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-200">Name</span>
+                <span className="mb-2 block text-sm font-medium text-stone-700">Name</span>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
+                  className="w-full rounded-[18px] border border-[color:var(--surface-border)] bg-[#fffcf8] px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-ember focus:bg-white"
                   placeholder="Your name"
                 />
               </label>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-200">Email</span>
+                <span className="mb-2 block text-sm font-medium text-stone-700">Email</span>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
+                  className="w-full rounded-[18px] border border-[color:var(--surface-border)] bg-[#fffcf8] px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-ember focus:bg-white"
                   placeholder="you@company.com"
                 />
               </label>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-200">Message</span>
+                <span className="mb-2 block text-sm font-medium text-stone-700">Message</span>
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white outline-none transition placeholder:text-stone-300 focus:border-sand focus:bg-white/15"
+                  className="w-full rounded-[18px] border border-[color:var(--surface-border)] bg-[#fffcf8] px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-ember focus:bg-white"
                   placeholder="Tell us what you need support with."
                 />
               </label>
 
-              <button
-                type="submit"
-                className="accent-button"
-              >
+              <button type="submit" className="primary-button">
                 Submit
               </button>
 
               {submitted ? (
-                <p aria-live="polite" className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-stone-100">
+                <p aria-live="polite" className="rounded-[18px] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
                   Message recorded. This demo form is ready to connect to your preferred backend or email workflow.
                 </p>
               ) : null}

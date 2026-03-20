@@ -1,22 +1,11 @@
-import { Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, PhoneCall, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { navLinks } from '../data/site';
+import { contactInfo, navLinks } from '../data/site';
 import Logo from './Logo';
-import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    // Switch to a denser, glassy navbar once the user has moved past the hero edge.
-    const onScroll = () => setScrolled(window.scrollY > 24);
-
-    onScroll();
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const close = () => setOpen(false);
@@ -26,20 +15,18 @@ function Navbar() {
   }, []);
 
   const navClassName = ({ isActive }) =>
-    `transition-colors ${isActive ? 'text-ember' : 'text-stone-700 hover:text-oak dark:text-stone-200 dark:hover:text-cream'}`;
+    `text-sm font-semibold transition-colors ${isActive ? 'text-ember' : 'text-stone-700 hover:text-oak'}`;
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4">
-      <div
-        className={`mx-auto max-w-7xl rounded-[28px] border px-5 transition-all lg:px-7 ${
-          scrolled
-            ? 'border-[color:var(--surface-border-strong)] bg-[color:var(--surface-bg-strong)] shadow-soft backdrop-blur-xl'
-            : 'border-[color:var(--surface-border)] bg-[color:var(--surface-bg)] backdrop-blur-md'
-        }`}
-      >
+    <header className="sticky top-0 z-50 border-b border-[color:var(--surface-border)] bg-white/80 backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-6">
-          <NavLink to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <Logo />
+          <NavLink
+            to="/"
+            className="flex items-center gap-3 rounded-[24px] bg-[#fff7ef] px-3 py-2 shadow-[0_18px_40px_-32px_rgba(21,16,15,0.55)] ring-1 ring-[color:var(--surface-border)]"
+            onClick={() => setOpen(false)}
+          >
+            <Logo compact showTagline={false} />
           </NavLink>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -48,18 +35,25 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <ThemeToggle />
+          </nav>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <a href={`tel:${contactInfo.phone}`} className="secondary-button px-5">
+              <PhoneCall className="h-4 w-4" />
+              Call Us
+            </a>
             <NavLink
               to="/contact"
               className="primary-button"
             >
-              Get in Touch
+              Request Consultation
+              <ArrowRight className="h-4 w-4" />
             </NavLink>
-          </nav>
+          </div>
 
           <button
             type="button"
-            className="rounded-full border border-[color:var(--surface-border)] p-3 text-stone-700 dark:text-stone-200 lg:hidden"
+            className="rounded-full border border-[color:var(--surface-border)] bg-white p-3 text-stone-700 shadow-card lg:hidden"
             aria-expanded={open}
             aria-label="Toggle navigation menu"
             onClick={() => setOpen((current) => !current)}
@@ -81,13 +75,17 @@ function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
-              <ThemeToggle />
+              <a href={`tel:${contactInfo.phone}`} className="secondary-button mt-2 w-fit">
+                <PhoneCall className="h-4 w-4" />
+                Call Us
+              </a>
               <NavLink
                 to="/contact"
                 className="primary-button mt-2 w-fit"
                 onClick={() => setOpen(false)}
               >
-                Get in Touch
+                Request Consultation
+                <ArrowRight className="h-4 w-4" />
               </NavLink>
             </nav>
           </div>

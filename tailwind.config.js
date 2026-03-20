@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Sora', 'Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         ink: '#15100f',
@@ -17,13 +17,13 @@ export default {
         slateglass: '#15100fcc',
       },
       boxShadow: {
-        soft: '0 24px 80px -24px rgba(53, 26, 22, 0.24)',
-        card: '0 18px 40px -22px rgba(26, 16, 15, 0.22)',
-        glow: '0 28px 90px -42px rgba(141, 36, 24, 0.42)',
+        soft: '0 40px 120px -54px rgba(53, 26, 22, 0.28)',
+        card: '0 24px 60px -32px rgba(26, 16, 15, 0.22)',
+        glow: '0 24px 70px -34px rgba(141, 36, 24, 0.34)',
       },
       backgroundImage: {
         'hero-grid':
-          'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+          'linear-gradient(rgba(58,33,29,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(58,33,29,0.06) 1px, transparent 1px)',
       },
       animation: {
         float: 'float 9s ease-in-out infinite',
